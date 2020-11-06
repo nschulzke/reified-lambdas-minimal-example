@@ -1,0 +1,23 @@
+plugins {
+    id 'org.jetbrains.kotlin.js' version '1.4.10'
+}
+group = 'me.nathan'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+kotlin {
+    js {
+        browser {
+            binaries.executable()
+            testTask {
+                useKarma {
+                    useChromeHeadless()
+                }
+            }
+        }
+    }
+}
